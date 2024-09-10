@@ -46,8 +46,8 @@ MonoBehaviour:
     autoImportArcore: 1
     thirdPartyARCoreClientDetected: 0
   playmode:
-    mRecordingPath: 
-    playModeType: 1
+    mRecordingPath: C:/Users/rocka/Downloads/20240910_085741.mp4
+    playModeType: 0
   webcam:
     renderTextureLayer: 30
   packageInformation:

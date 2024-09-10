@@ -4,7 +4,16 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/ILPScene.unity
+    guid: 02fcfc1bc8fd8994c9853ecfad4b370b
   m_configObjects:
+    com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000,
+      guid: 8bfe154f9d68f13429bf022f6b4f7afc, type: 2}
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 01dc929f58620e341ba971f989bea131,
+      type: 2}
+    com.unity.adaptiveperformance.samsung.android.provider_settings: {fileID: 11400000,
+      guid: 68db916fcf456e74f9e55f09e3a4c776, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000,
       guid: 217d9ef2ae84db44fb8a48a935d524a2, type: 2}
