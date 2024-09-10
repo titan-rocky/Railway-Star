@@ -10,15 +10,17 @@ public class ARNav : MonoBehaviour
     public float updateInterval = 0.1f;
     public float lineHeight = 0.1f; // Height of the line above the ground
     public float lineWidth = 0.05f; // Width of the line
-
+    public GameObject agentobject;
+    private NavMeshAgent agent;
     private NavMeshPath path;
     private float elapsedTime;
     private AreaTargetBehaviour areaTarget;
     private bool isLocalized = false;
     private bool lineDefined = true;
-
+   
     void Start()
     {
+
         if (lineRenderer == null)
         {
             lineRenderer = gameObject.AddComponent<LineRenderer>();
@@ -27,7 +29,7 @@ public class ARNav : MonoBehaviour
 
         SetupLineRenderer();
         path = new NavMeshPath();
-
+        agent = agentobject.GetComponent<NavMeshAgent>();
         // Find the AreaTargetBehaviour in the scene
         areaTarget = FindObjectOfType<AreaTargetBehaviour>();
         if (areaTarget == null)
@@ -70,6 +72,8 @@ public class ARNav : MonoBehaviour
             return;
         }
 
+        agent.Warp(new Vector3(arCamera.transform.position.x, agent.gameObject.transform.position.y, arCamera.transform.position.z));
+
         elapsedTime += Time.deltaTime;
 
         if (elapsedTime >= updateInterval)
@@ -77,6 +81,7 @@ public class ARNav : MonoBehaviour
             elapsedTime = 0f;
             UpdatePath();
         }
+
     }
 
     void UpdatePath()

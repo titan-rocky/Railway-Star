@@ -46,7 +46,7 @@ MonoBehaviour:
     autoImportArcore: 1
     thirdPartyARCoreClientDetected: 0
   playmode:
-    mRecordingPath: C:/Users/rocka/Downloads/20240910_085741.mp4
+    mRecordingPath: C:/Users/adhit/Desktop/Projects and Tools/SIH/Area Targets/Recording/Home-new-recording.mp4
     playModeType: 0
   webcam:
     renderTextureLayer: 30
