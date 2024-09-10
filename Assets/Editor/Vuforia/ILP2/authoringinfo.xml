@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<QCARInfo>
+    <TargetSet version="3.4">
+        <AreaTarget version="5.2" bbox="-14.7020 -5.9746 -15.4685 13.6897 4.2410 22.7592" area="99" targetId="69fbd600ab1f4f82a94798e8b20c392b" name="ILP2" pathAuthoring="69fbd600ab1f4f82a94798e8b20c392b_authoring.glb" pathOcclusion="69fbd600ab1f4f82a94798e8b20c392b_occlusion.3dt" pathNavMesh="69fbd600ab1f4f82a94798e8b20c392b_navmesh.glb" cloudTarget="false" />
+    </TargetSet>
+</QCARInfo>
