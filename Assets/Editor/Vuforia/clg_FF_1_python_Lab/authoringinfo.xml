@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<QCARInfo>
+    <TargetSet version="3.4">
+        <AreaTarget version="5.2" bbox="-11.9155 -4.1289 -22.0184 27.0392 2.0064 11.8066" area="174" targetId="78cf2c67d9604d3b89f01ffd930b2b79" name="clg_FF_1_python_Lab" pathAuthoring="78cf2c67d9604d3b89f01ffd930b2b79_authoring.glb" pathOcclusion="78cf2c67d9604d3b89f01ffd930b2b79_occlusion.3dt" pathNavMesh="78cf2c67d9604d3b89f01ffd930b2b79_navmesh.glb" cloudTarget="false" />
+    </TargetSet>
+</QCARInfo>
