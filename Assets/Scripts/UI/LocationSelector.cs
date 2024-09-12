@@ -3,19 +3,20 @@ using UnityEngine.SceneManagement;
 
 public class LocationSelector : MonoBehaviour
 {
+    string Scenename = "TestGen";
     public static string selectedLocation; // Static variable to store the selected location
 
     // This function will be called when the "Kitchen" button is pressed
-    public void SelectKitchen()
+    public void SelectCisco()
     {
-        selectedLocation = "Kitchen";
-        SceneManager.LoadScene("HomeScene");
+        selectedLocation = "Cisco";
+        SceneManager.LoadScene(Scenename);
     }
 
     // This function will be called when the "Bedroom" button is pressed
-    public void SelectBedroom()
+    public void SelectRestroom()
     {
-        selectedLocation = "Bedroom";
-        SceneManager.LoadScene("HomeScene");
+        selectedLocation = "RestRoom";
+        SceneManager.LoadScene(Scenename);
     }
 }

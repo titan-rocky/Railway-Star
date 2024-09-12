@@ -8,18 +8,25 @@ using TMPro;
 public class targetStatus : MonoBehaviour
 {
     public TMP_Text label; 
-    private AreaTargetBehaviour areaTarget;
+    private AreaTargetBehaviour[] areaTargets;
     
     void Start()
     {
-        areaTarget = FindObjectOfType<AreaTargetBehaviour>();
-        if (areaTarget == null) return;
-        else label.text="Target: "+areaTarget.TargetName;
-        
+        areaTargets = FindObjectsOfType<AreaTargetBehaviour>();
     }
 
     void Update()
     {
-        
+        foreach (AreaTargetBehaviour target in areaTargets) {
+            if (target.enabled &&
+                    (target.TargetStatus.Status == Status.TRACKED ||
+                     target.TargetStatus.Status == Status.EXTENDED_TRACKED)){
+                
+                label.text="Target: "+target.TargetName;
+
+            } else {
+                label.text="Target: Not Init...";
+            }
+        }
     }
 }
