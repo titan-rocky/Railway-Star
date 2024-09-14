@@ -182,25 +182,4 @@ public class MultiArea : MonoBehaviour
 
     // Use the LateUpdate() method to bring the group transform back 
     // to the Unity World Center and update the ARCamera pose accordingly
-    void LateUpdate()
-    {
-        if (!VuforiaApplication.Instance.IsRunning)
-            return;
-
-        // Get the AR Camera
-        var cam = VuforiaBehaviour.Instance.GetComponent<Camera>();
-        if (!cam) return;
-
-        if (StaticAreaTargets)
-        {
-            // Temporarily re-parent the AR Camera under this group node
-            // while preserving the relative pose
-            cam.transform.SetParent(transform, worldPositionStays: true);
-
-            transform.SetPositionAndRotation(Vector3.zero, Quaternion.identity);
-
-            // Un-parent the ARCamera
-            cam.transform.SetParent(null, worldPositionStays: true);
-        }
-    }
 }
