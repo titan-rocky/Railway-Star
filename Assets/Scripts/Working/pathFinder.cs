@@ -8,7 +8,7 @@ public class pathFinder : MonoBehaviour
 {
     public Camera ARCam;
     public LineRenderer lineRenderer;
-    public GameObject destination;
+    public DestGen destinationScript;
     public GameObject agentObject;
     public GameObject areaTargetParent;
     public float updateInterval = 0.1F;
@@ -19,7 +19,7 @@ public class pathFinder : MonoBehaviour
     private NavMeshAgent agent;
     private float elapsedTime;
     private AreaTargetBehaviour nearestAreaTarget;
-
+    private GameObject destination;
 
     void Start()
     {
@@ -29,11 +29,16 @@ public class pathFinder : MonoBehaviour
         agent = agentObject.GetComponent<NavMeshAgent>();
         path = new NavMeshPath();
         
+        destination = destinationScript.GetDestination();
+
         SetProperties();
     }
 
     void Update()
     {
+        // Warps the x and z of navMeshAgent to the camera
+        WarpAgent(ARCam.transform.position);
+
         // Update the line every updateInterval seconds
         elapsedTime += Time.deltaTime;
         if (elapsedTime >= updateInterval)
@@ -41,9 +46,12 @@ public class pathFinder : MonoBehaviour
             elapsedTime = 0f;
             UpdatePath();
         }
-        // Wraps the x and z of navMeshAgent to the camera
-        agent.Warp(new Vector3(ARCam.transform.position.x, agent.gameObject.transform.position.y, ARCam.transform.position.z));
-        //FindNearestAreaTarget();
+    }
+
+    /// To warp the agent to a position vector (x,y,z) where y is the normal
+    private void WarpAgent(Vector3 position) {
+        agent.Warp(new Vector3(position.x, agent.gameObject.transform.position.y, position.z));
+        
     }
 
     private void UpdatePath() {
@@ -106,7 +114,8 @@ public class pathFinder : MonoBehaviour
         }
     }
 
-    private void FindEuclideanDistance() {
+    private float FindEuclideanDistance(Vector3 src, Vector3 dest) {
+        return 0.1F;
     }
 
 }
