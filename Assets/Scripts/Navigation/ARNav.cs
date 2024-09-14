@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
+using TMPro;
 using Vuforia;
 
 public class ARNav : MonoBehaviour
@@ -12,13 +13,16 @@ public class ARNav : MonoBehaviour
     public float updateInterval = 0.1f;
     public float lineHeight = 0.1f;
     public float lineWidth = 0.05f;
-    public GameObject agentobject;
+    public GameObject agentObject;
+    public TMP_Text label;
+
     private NavMeshAgent agent;
     private NavMeshPath path;
     private float elapsedTime;
     private AreaTargetBehaviour areaTarget;
     private bool isLocalized = false;
     private bool lineDefined = true;
+    private AreaTargetBehaviour nearestAreaTarget;
 
     void Start()
     {
@@ -30,7 +34,7 @@ public class ARNav : MonoBehaviour
 
         SetupLineRenderer();
         path = new NavMeshPath();
-        agent = agentobject.GetComponent<NavMeshAgent>();
+        agent = agentObject.GetComponent<NavMeshAgent>();
 
         // Find the AreaTargetBehaviour in the scene
         areaTarget = FindObjectOfType<AreaTargetBehaviour>();
@@ -84,6 +88,8 @@ public class ARNav : MonoBehaviour
 
     void Update()
     {
+        //FindNearestAreaTarget();
+        //areaTarget = nearestAreaTarget;
         if (!isLocalized)
         {
             lineRenderer.positionCount = 0; // Clear the line when not localized
@@ -106,6 +112,8 @@ public class ARNav : MonoBehaviour
             elapsedTime = 0f;
             UpdatePath();
         }
+        
+        //if (label) label.text="Target: "+nearestAreaTarget.TargetName;
     }
 
     void UpdatePath()
@@ -140,6 +148,27 @@ public class ARNav : MonoBehaviour
             lineRenderer.positionCount = 0;
         }
     }
+
+    void FindNearestAreaTarget() {
+        AreaTargetBehaviour[] areaTargets = FindObjectsOfType<AreaTargetBehaviour>();
+        float closestDistance = Mathf.Infinity;
+        foreach (AreaTargetBehaviour areaTarget in areaTargets)
+        {
+            float distance = Vector3.Distance(agent.transform.position, areaTarget.transform.position);
+            if (distance < closestDistance)
+            {
+                closestDistance = distance;
+                nearestAreaTarget = areaTarget;
+            }
+        }
+        if (nearestAreaTarget != null)
+        {
+            Debug.Log("Nearest Area Target: " + nearestAreaTarget.name);
+            // Now you can localize to the nearest target
+        }
+    }
+
+
 
     void OnDisable()
     {

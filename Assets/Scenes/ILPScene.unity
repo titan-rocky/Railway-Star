@@ -950,6 +950,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arCamera: {fileID: 609692539}
+  kitchenDestination: {fileID: 0}
+  bedroomDestination: {fileID: 0}
   destinationObject: {fileID: 596665377}
   lineRenderer: {fileID: 0}
   updateInterval: 0.05
