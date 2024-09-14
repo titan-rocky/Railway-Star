@@ -2,12 +2,15 @@ using UnityEngine;
 using UnityEngine.AI;
 using TMPro;
 using Vuforia;
+using System;
+using System.Collections.Generic;
 
 public class ARNav : MonoBehaviour
 {
     public Camera arCamera;
-    public GameObject kitchenDestination; // Assign this in the Inspector
-    public GameObject bedroomDestination; // Assign this in the Inspector
+    // Assign this in the Inspector
+    [SerializeField]
+    public List<GameObject> destinations;
     public GameObject destinationObject;
     public LineRenderer lineRenderer;
     public float updateInterval = 0.1f;
@@ -47,9 +50,13 @@ public class ARNav : MonoBehaviour
             // Subscribe to the OnTargetStatusChanged event
             areaTarget.OnTargetStatusChanged += OnTargetStatusChanged;
         }
-
+        if (destinations.Count == 0)
+        {
+            Debug.LogError("No Destinations Available. Set atleast one");
+        }
         // Set the destination based on the selected location
         SetDestinationBasedOnLocation();
+
     }
 
     void SetupLineRenderer()
@@ -69,11 +76,11 @@ public class ARNav : MonoBehaviour
     {
         if (LocationSelector.selectedLocation == "Cisco")
         {
-            destinationObject.transform.position = kitchenDestination.transform.position;
+            destinationObject.transform.position = destinations[0].transform.position;
         }
         else if (LocationSelector.selectedLocation == "Lab")
         {
-            destinationObject.transform.position = bedroomDestination.transform.position;
+            destinationObject.transform.position = destinations[1].transform.position;
         }
     }
 
@@ -88,8 +95,7 @@ public class ARNav : MonoBehaviour
 
     void Update()
     {
-        //FindNearestAreaTarget();
-        //areaTarget = nearestAreaTarget;
+        
         if (!isLocalized)
         {
             lineRenderer.positionCount = 0; // Clear the line when not localized
@@ -113,7 +119,7 @@ public class ARNav : MonoBehaviour
             UpdatePath();
         }
         
-        //if (label) label.text="Target: "+nearestAreaTarget.TargetName;
+
     }
 
     void UpdatePath()
@@ -149,24 +155,6 @@ public class ARNav : MonoBehaviour
         }
     }
 
-    void FindNearestAreaTarget() {
-        AreaTargetBehaviour[] areaTargets = FindObjectsOfType<AreaTargetBehaviour>();
-        float closestDistance = Mathf.Infinity;
-        foreach (AreaTargetBehaviour areaTarget in areaTargets)
-        {
-            float distance = Vector3.Distance(agent.transform.position, areaTarget.transform.position);
-            if (distance < closestDistance)
-            {
-                closestDistance = distance;
-                nearestAreaTarget = areaTarget;
-            }
-        }
-        if (nearestAreaTarget != null)
-        {
-            Debug.Log("Nearest Area Target: " + nearestAreaTarget.name);
-            // Now you can localize to the nearest target
-        }
-    }
 
 
 

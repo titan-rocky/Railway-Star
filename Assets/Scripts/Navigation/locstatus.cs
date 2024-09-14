@@ -25,22 +25,18 @@ public class locstatus : MonoBehaviour
     
     void OnTargetStatusChanged(ObserverBehaviour behaviour, TargetStatus status)
     {
-        isLocalized = (status.Status == Status.TRACKED || status.Status == Status.EXTENDED_TRACKED);
+        isLocalized = status.Status == Status.EXTENDED_TRACKED;
         switch (status.Status){
-            case Status.TRACKED:
-                label.text = "Tracking";
-                label.color = new Color(0.25F,0.76F,0.22F,1F);
-                break;
             case Status.EXTENDED_TRACKED:
-                label.text = "Tracking (Extended)";
+                label.text = "Localized";
                 label.color = new Color(0.25F,0.76F,0.22F,1F);
                 break;
             case Status.LIMITED:
-                label.text = "Limited";
+                label.text = "Relocalizing";
                 label.color = new Color(0.94F,0.48F,0.0F,1F);
                 break;
             default:
-                label.text = "Untracked";
+                label.text = "Please look around";
                 label.color = new Color(0.94F,0.48F,0.0F,1F);
                 break;
         }

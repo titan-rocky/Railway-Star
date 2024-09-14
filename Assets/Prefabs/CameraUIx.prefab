@@ -170,7 +170,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8584857607810007574}
-  - component: {fileID: 683606553462154951}
   m_Layer: 5
   m_Name: Localization
   m_TagString: Untagged
@@ -198,19 +197,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -73.00001}
   m_SizeDelta: {x: 372.1158, y: 57.0952}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &683606553462154951
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2991538428784830207}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9543c05fd07950e44b25d717fcdb605f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  label: {fileID: 214150739079814124}
 --- !u!1 &3612257405044815704
 GameObject:
   m_ObjectHideFlags: 0
