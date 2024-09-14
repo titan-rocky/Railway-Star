@@ -98,9 +98,10 @@ public class ARNav : MonoBehaviour
         
         if (!isLocalized)
         {
-            lineRenderer.positionCount = 0; // Clear the line when not localized
+            lineRenderer.positionCount = 0; 
             return;
         }
+        
 
         Vector3 cameraPositionXZ = new Vector3(arCamera.transform.position.x, agent.transform.position.y, arCamera.transform.position.z);
 
@@ -111,6 +112,16 @@ public class ARNav : MonoBehaviour
         agent.Warp(new Vector3(hit.position.x, hit.position.y, hit.position.z));
        }
 
+         Vector3 directionToCamera = arCamera.transform.position - destinationObject.transform.position;
+
+        directionToCamera.y = 0;
+
+        if (directionToCamera != Vector3.zero)
+        {
+            Quaternion targetRotation = Quaternion.LookRotation(directionToCamera);
+            destinationObject.transform.rotation = targetRotation;
+        }
+        
         elapsedTime += Time.deltaTime;
 
         if (elapsedTime >= updateInterval)
@@ -155,9 +166,7 @@ public class ARNav : MonoBehaviour
         }
     }
 
-
-
-
+   
     void OnDisable()
     {
         if (areaTarget != null)
