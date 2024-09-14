@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 56790014}
   - component: {fileID: 56790013}
   m_Layer: 5
-  m_Name: Bedroom
+  m_Name: Lab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -414,7 +414,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Bedroom
+  m_text: 'Lab
 
 '
   m_isRightToLeft: 0
@@ -769,7 +769,7 @@ GameObject:
   - component: {fileID: 1641602124}
   - component: {fileID: 1641602123}
   m_Layer: 5
-  m_Name: Kitchen
+  m_Name: Cisco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1014,9 +1014,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Kitchen
-
-'
+  m_text: Cisco
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

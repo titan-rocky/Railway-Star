@@ -63,11 +63,11 @@ public class ARNav : MonoBehaviour
 
     void SetDestinationBasedOnLocation()
     {
-        if (LocationSelector.selectedLocation == "Kitchen")
+        if (LocationSelector.selectedLocation == "Cisco")
         {
             destinationObject.transform.position = kitchenDestination.transform.position;
         }
-        else if (LocationSelector.selectedLocation == "Bedroom")
+        else if (LocationSelector.selectedLocation == "Lab")
         {
             destinationObject.transform.position = bedroomDestination.transform.position;
         }
@@ -90,7 +90,14 @@ public class ARNav : MonoBehaviour
             return;
         }
 
-        agent.Warp(new Vector3(arCamera.transform.position.x, agent.gameObject.transform.position.y, arCamera.transform.position.z));
+        Vector3 cameraPositionXZ = new Vector3(arCamera.transform.position.x, agent.transform.position.y, arCamera.transform.position.z);
+
+        NavMeshHit hit;
+       
+       if (NavMesh.SamplePosition(cameraPositionXZ, out hit, 1.0f,NavMesh.AllAreas))
+       {
+        agent.Warp(new Vector3(hit.position.x, hit.position.y, hit.position.z));
+       }
 
         elapsedTime += Time.deltaTime;
 
@@ -106,7 +113,7 @@ public class ARNav : MonoBehaviour
         if (arCamera == null || destinationObject == null || areaTarget == null)
             return;
 
-        Vector3 sourcePosition = arCamera.transform.position;
+        Vector3 sourcePosition = agent.transform.position;
         Vector3 destinationPosition = destinationObject.transform.position;
 
         // Project source and destination positions onto the NavMesh

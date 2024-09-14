@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<QCARInfo>
+    <TargetSet version="3.4">
+        <AreaTarget version="5.2" bbox="-5.9847 -4.3001 -22.2725 35.0965 3.1786 18.7715" area="81" targetId="c433abe4106e4b27af8c71e24173b26a" name="clg_FF_2_Restroom" pathAuthoring="c433abe4106e4b27af8c71e24173b26a_authoring.glb" pathOcclusion="c433abe4106e4b27af8c71e24173b26a_occlusion.3dt" pathNavMesh="c433abe4106e4b27af8c71e24173b26a_navmesh.glb" cloudTarget="false" />
+    </TargetSet>
+</QCARInfo>
