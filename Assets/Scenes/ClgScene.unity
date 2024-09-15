@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af19d4b80f4fc4950b99eb9ea78ab6ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StatusFilter: 1
+  StatusFilter: 0
   UsePoseSmoothing: 1
   AnimationCurve:
     serializedVersion: 2
@@ -200,21 +200,21 @@ MonoBehaviour:
   PreviewVisible: 1
   RuntimeOcclusion: 1
   RuntimeCollider: 1
-  mTrackableName: clg_FF_2_Lift
+  mTrackableName: clg_SF_lift
   mInitializedInEditor: 1
-  mDataSetPath: Vuforia/clg_FF_2_Lift.xml
-  AuthoringModelPath: 043e251e552645c184ec16203e5d98ad_authoring.glb
-  OcclusionModelPath: 043e251e552645c184ec16203e5d98ad_occlusion.3dt
-  MaxClippingHeight: 4.83323
-  MinClippingHeight: -4.99263
+  mDataSetPath: Vuforia/clg_SF_lift.xml
+  AuthoringModelPath: d19fe166161b4acd8d002821026ba728_authoring.glb
+  OcclusionModelPath: d19fe166161b4acd8d002821026ba728_occlusion.3dt
+  MaxClippingHeight: 8.061795
+  MinClippingHeight: -3.831295
   mSize: {x: 0, y: 0, z: 0}
   mBoundingBox:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
-  mNavMeshModelPath: 043e251e552645c184ec16203e5d98ad_navmesh.glb
+  mNavMeshModelPath: d19fe166161b4acd8d002821026ba728_navmesh.glb
   mVersion: 5.2
-  mBBoxMin: {x: -18.3054, y: -4.546, z: -26.5876}
-  mBBoxMax: {x: 9.403999, y: 4.3866, z: 13.1632}
+  mBBoxMin: {x: -28.115103, y: -3.2907, z: -46.5387}
+  mBBoxMax: {x: 25.633799, y: 7.5212, z: 12.104099}
   mModelMesh: {fileID: 0}
   mRequiresExternalPositions: 0
   mPreview: {fileID: 319192332}
@@ -227,7 +227,7 @@ Transform:
   m_GameObject: {fileID: 319192327}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -22.21, y: 0, z: 10.28}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -251,8 +251,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mObserverBehaviour: {fileID: 319192330}
   mHiddenRoot: {fileID: 0}
-  mTargetName: clg_FF_2_Lift
-  mDatasetName: Vuforia/clg_FF_2_Lift.xml
+  mTargetName: clg_SF_lift
+  mDatasetName: Vuforia/clg_SF_lift.xml
   mCastedBehaviour: {fileID: 319192330}
 --- !u!1 &338034727
 GameObject:
@@ -669,7 +669,7 @@ Transform:
   m_GameObject: {fileID: 609692535}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.40857193, z: -0, w: 0.9127262}
-  m_LocalPosition: {x: -1.65, y: -0.19, z: -3.07}
+  m_LocalPosition: {x: -25.92, y: -0.19, z: 3.29}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -749,7 +749,7 @@ GameObject:
   m_Component:
   - component: {fileID: 620270459}
   m_Layer: 0
-  m_Name: Lab
+  m_Name: Mech
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -764,7 +764,7 @@ Transform:
   m_GameObject: {fileID: 620270458}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.12, y: -0.284, z: 8.38}
+  m_LocalPosition: {x: 16.98, y: -0.284, z: -32.32}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -818,6 +818,37 @@ MonoBehaviour:
   m_Center: {x: 0, y: 1, z: 0}
   m_Area: 1
   m_AffectedAgents: ffffffff
+--- !u!1 &864572702
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 864572703}
+  m_Layer: 0
+  m_Name: EEE
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &864572703
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 864572702}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -26.01, y: -0.284, z: 20.09}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1331507824}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &926398333
 GameObject:
   m_ObjectHideFlags: 0
@@ -828,7 +859,7 @@ GameObject:
   m_Component:
   - component: {fileID: 926398334}
   m_Layer: 0
-  m_Name: Cisco
+  m_Name: ECE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -843,7 +874,38 @@ Transform:
   m_GameObject: {fileID: 926398333}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.805, y: -0.62, z: 0.949}
+  m_LocalPosition: {x: -7.779, y: -0.62, z: -7.287}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1331507824}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1010355498
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1010355499}
+  m_Layer: 0
+  m_Name: MCT
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1010355499
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1010355498}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -12.312, y: -0.284, z: 30.968}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1031,13 +1093,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1132608170}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.23839633, z: -0, w: 0.971168}
-  m_LocalPosition: {x: 4.14, y: -0.2, z: 6.96}
+  m_LocalRotation: {x: -0, y: -0.30865726, z: -0, w: 0.9511733}
+  m_LocalPosition: {x: -25.94, y: 0.51, z: 8.07}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1612881725}
-  m_LocalEulerAnglesHint: {x: 0, y: 27.584, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -35.957, z: 0}
 --- !u!114 &1132608173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1050,7 +1112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af19d4b80f4fc4950b99eb9ea78ab6ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StatusFilter: 1
+  StatusFilter: 0
   UsePoseSmoothing: 1
   AnimationCurve:
     serializedVersion: 2
@@ -1097,21 +1159,21 @@ MonoBehaviour:
   PreviewVisible: 1
   RuntimeOcclusion: 1
   RuntimeCollider: 1
-  mTrackableName: clg_FF_2_Restroom
+  mTrackableName: Clg_SF_Mct
   mInitializedInEditor: 1
-  mDataSetPath: Vuforia/clg_FF_2_Restroom.xml
-  AuthoringModelPath: c433abe4106e4b27af8c71e24173b26a_authoring.glb
-  OcclusionModelPath: c433abe4106e4b27af8c71e24173b26a_occlusion.3dt
-  MaxClippingHeight: 3.5525348
-  MinClippingHeight: -4.674035
+  mDataSetPath: Vuforia/Clg_SF_Mct.xml
+  AuthoringModelPath: 5c17087e0d7c4b53b012f991e16bddb7_authoring.glb
+  OcclusionModelPath: 5c17087e0d7c4b53b012f991e16bddb7_occlusion.3dt
+  MaxClippingHeight: 3.699855
+  MinClippingHeight: -4.3093553
   mSize: {x: 0, y: 0, z: 0}
   mBoundingBox:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
-  mNavMeshModelPath: c433abe4106e4b27af8c71e24173b26a_navmesh.glb
+  mNavMeshModelPath: 5c17087e0d7c4b53b012f991e16bddb7_navmesh.glb
   mVersion: 5.2
-  mBBoxMin: {x: -35.0965, y: -4.3001, z: -22.272497}
-  mBBoxMax: {x: 5.9846992, y: 3.1785998, z: 18.771502}
+  mBBoxMin: {x: -29.837399, y: -3.9453, z: -1.0687981}
+  mBBoxMax: {x: 31.488003, y: 3.3358002, z: 46.4555}
   mModelMesh: {fileID: 0}
   mRequiresExternalPositions: 0
   mPreview: {fileID: 1132608175}
@@ -1129,8 +1191,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mObserverBehaviour: {fileID: 1132608174}
   mHiddenRoot: {fileID: 0}
-  mTargetName: clg_FF_2_Restroom
-  mDatasetName: Vuforia/clg_FF_2_Restroom.xml
+  mTargetName: Clg_SF_Mct
+  mDatasetName: Vuforia/Clg_SF_Mct.xml
   mCastedBehaviour: {fileID: 1132608174}
 --- !u!1 &1155773553
 GameObject:
@@ -1231,6 +1293,8 @@ Transform:
   m_Children:
   - {fileID: 926398334}
   - {fileID: 620270459}
+  - {fileID: 864572703}
+  - {fileID: 1010355499}
   m_Father: {fileID: 319192331}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1414917833
@@ -1266,6 +1330,8 @@ MonoBehaviour:
   destinations:
   - {fileID: 926398333}
   - {fileID: 620270458}
+  - {fileID: 864572702}
+  - {fileID: 1010355498}
   destinationObject: {fileID: 919132149435274309}
   lineRenderer: {fileID: 1633810099}
   distanceText: {fileID: 6998208892504863666}
@@ -1488,7 +1554,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1763868778
 Transform:
   m_ObjectHideFlags: 0
@@ -2066,7 +2132,7 @@ Transform:
   m_GameObject: {fileID: 919132149435274309}
   serializedVersion: 2
   m_LocalRotation: {x: 0.000000021855694, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.16, y: 0.04345, z: -2.8910644}
+  m_LocalPosition: {x: -1.21, y: -0.652, z: -10.82}
   m_LocalScale: {x: 25.753998, y: 25.753998, z: 25.753998}
   m_ConstrainProportionsScale: 0
   m_Children: []

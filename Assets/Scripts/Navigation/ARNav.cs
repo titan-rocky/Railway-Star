@@ -1,4 +1,4 @@
-using UnityEngine;
+    using UnityEngine;
 using UnityEngine.AI;
 using TMPro;
 using Vuforia;
@@ -21,6 +21,7 @@ public class ARNav : MonoBehaviour
     private NavMeshPath path;
     private float elapsedTime;
     private AreaTargetBehaviour areaTarget;
+    private bool firstTime = true;
     private bool isLocalized = false;
     private bool lineDefined = true;
     private bool destinationReached = false;
@@ -78,28 +79,38 @@ public class ARNav : MonoBehaviour
 
     void SetDestinationBasedOnLocation()
     {
-        if (LocationSelector.selectedLocation == "Cisco")
+        if (LocationSelector.selectedLocation == "ECE")
         {
             destinationObject.transform.position = destinations[0].transform.position;
         }
-        else if (LocationSelector.selectedLocation == "Lab")
+        else if (LocationSelector.selectedLocation == "Mech")
         {
             destinationObject.transform.position = destinations[1].transform.position;
+        }
+        else if (LocationSelector.selectedLocation == "EEE")
+        {
+            destinationObject.transform.position = destinations[2].transform.position;
+        }
+        else if (LocationSelector.selectedLocation == "MCT")
+        {
+            destinationObject.transform.position = destinations[3].transform.position;
         }
     }
 
     void OnTargetStatusChanged(ObserverBehaviour behaviour, TargetStatus status)
     {
-        isLocalized = (status.Status == Status.TRACKED || status.Status == Status.EXTENDED_TRACKED);
+        isLocalized = (status.Status == Status.TRACKED || status.Status == Status.EXTENDED_TRACKED || status.Status == Status.LIMITED);
+        
         if (isLocalized)
         {
+            firstTime = firstTime && false;
             Debug.Log("Localized");
         }
     }
 
     void Update()
     {
-        if (!isLocalized || destinationReached)
+        if (firstTime || destinationReached)
         {
             lineRenderer.positionCount = 0;  // Clear the line when not localized or destination reached
             return;
