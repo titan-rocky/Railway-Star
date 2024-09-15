@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<QCARInfo>
+    <TargetSet version="3.4">
+        <AreaTarget version="5.2" bbox="-25.6338 -3.2907 -46.5387 28.1151 7.5212 12.1041" area="227" targetId="d19fe166161b4acd8d002821026ba728" name="clg_SF_lift" pathAuthoring="d19fe166161b4acd8d002821026ba728_authoring.glb" pathOcclusion="d19fe166161b4acd8d002821026ba728_occlusion.3dt" pathNavMesh="d19fe166161b4acd8d002821026ba728_navmesh.glb" cloudTarget="false" />
+    </TargetSet>
+</QCARInfo>
