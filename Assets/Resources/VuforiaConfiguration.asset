@@ -46,7 +46,7 @@ MonoBehaviour:
     autoImportArcore: 1
     thirdPartyARCoreClientDetected: 0
   playmode:
-    mRecordingPath: C:/Users/adhit/Desktop/Projects and Tools/SIH/Area Targets/Recording/restroom.mp4
+    mRecordingPath: C:/Users/adhit/Desktop/Projects and Tools/SIH/Area Targets/Recording/lift.mp4
     playModeType: 2
   webcam:
     renderTextureLayer: 30
