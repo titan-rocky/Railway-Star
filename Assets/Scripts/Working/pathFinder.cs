@@ -28,7 +28,7 @@ public class pathFinder : MonoBehaviour
         }
         agent = agentObject.GetComponent<NavMeshAgent>();
         path = new NavMeshPath();
-        
+
         destination = destinationScript.GetDestination();
 
         SetProperties();
@@ -36,10 +36,8 @@ public class pathFinder : MonoBehaviour
 
     void Update()
     {
-        // Warps the x and z of navMeshAgent to the camera
         WarpAgent(ARCam.transform.position);
 
-        // Update the line every updateInterval seconds
         elapsedTime += Time.deltaTime;
         if (elapsedTime >= updateInterval)
         {
@@ -48,10 +46,9 @@ public class pathFinder : MonoBehaviour
         }
     }
 
-    /// To warp the agent to a position vector (x,y,z) where y is the normal
+    /// To warp the x and z of agent to a position vector (x,y,z) where y is the normal
     private void WarpAgent(Vector3 position) {
         agent.Warp(new Vector3(position.x, agent.gameObject.transform.position.y, position.z));
-        
     }
 
     private void UpdatePath() {
@@ -79,10 +76,9 @@ public class pathFinder : MonoBehaviour
             Debug.LogWarning("Unable to calculate path!");
             lineRenderer.positionCount = 0;
         }
-
-
     }
 
+    /// SetProperties for LineRenderer
     private void SetProperties() {
         lineRenderer.positionCount = 10;
         lineRenderer.numCapVertices = 10;
@@ -110,12 +106,6 @@ public class pathFinder : MonoBehaviour
         if (nearestAreaTarget != null)
         {
             Debug.Log("Nearest Area Target: " + nearestAreaTarget.name);
-            // Now you can localize to the nearest target
         }
     }
-
-    private float FindEuclideanDistance(Vector3 src, Vector3 dest) {
-        return 0.1F;
-    }
-
 }

@@ -17,7 +17,7 @@ public class DestGen : MonoBehaviour
     {
         if (markerCanvas == null)
         {
-            markerCanvas = GetComponent<Canvas>(); // Automatically get the canvas component if not assigned
+            markerCanvas = GetComponent<Canvas>();
         }
         if (markerCanvas.renderMode != RenderMode.WorldSpace)
         {
@@ -34,7 +34,6 @@ public class DestGen : MonoBehaviour
 
     }
 
-    // Update is called once per frame
     void Update()
     {
     }

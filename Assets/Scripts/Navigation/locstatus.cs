@@ -9,7 +9,6 @@ public class locstatus : MonoBehaviour
 {
     public TMP_Text label; 
     private AreaTargetBehaviour areaTarget;
-    private bool isLocalized = false;
 
     void Start()
     {
@@ -20,12 +19,10 @@ public class locstatus : MonoBehaviour
 
     void Update()
     {
-        
     }
-    
+
     void OnTargetStatusChanged(ObserverBehaviour behaviour, TargetStatus status)
     {
-        
         switch (status.Status){
             case Status.EXTENDED_TRACKED:
                 label.text = "Localized";
@@ -40,18 +37,5 @@ public class locstatus : MonoBehaviour
                 label.color = new Color(0.94F,0.48F,0.0F,1F);
                 break;
         }
-        /*
-        if (isLocalized){
-            label.text = "Localized";
-            label.color = new Color(0.25F,0.76F,0.22F,1F);
-        } else if (status.Status == Status.LIMITED){
-            label.text = "Limited";
-            label.color = new Color(0.94F,0.48F,0.0F,1F);
-        }
-        else {
-            label.text = "Calibrating...";
-            label.color = new Color(0.94F,0.48F,0.0F,1F);
-        }
-        */
     }
 }

@@ -1,4 +1,4 @@
-    using UnityEngine;
+using UnityEngine;
 using UnityEngine.AI;
 using TMPro;
 using Vuforia;
@@ -10,13 +10,14 @@ public class ARNav : MonoBehaviour
     public List<GameObject> destinations;
     public GameObject destinationObject;
     public LineRenderer lineRenderer;
-    public TMP_Text distanceText;  // TMP_Text for displaying distance
-    public TMP_Text destinationReachedText;  // TMP_Text for "Destination Reached" message
+    public TMP_Text distanceText;
+    public TMP_Text destinationReachedText;
     public TMP_Text ETAText;
     public float updateInterval = 0.1f;
     public float lineHeight = 0.1f;
     public float lineWidth = 0.05f;
     public GameObject agentObject;
+
     private NavMeshAgent agent;
     private NavMeshPath path;
     private float elapsedTime;
@@ -25,7 +26,7 @@ public class ARNav : MonoBehaviour
     private bool isLocalized = false;
     private bool lineDefined = true;
     private bool destinationReached = false;
-    private float distanceThreshold = 2.0f;  // Set distance threshold for destination reach
+    private float distanceThreshold = 2.0f;
 
     void Start()
     {
@@ -39,11 +40,9 @@ public class ARNav : MonoBehaviour
         path = new NavMeshPath();
         agent = agentObject.GetComponent<NavMeshAgent>();
 
-        // Initialize UI Texts
         destinationReachedText.text = "";  // Clear destination reached message at start
         distanceText.text = "";  // Clear distance text at start
 
-        // Find the AreaTargetBehaviour in the scene
         areaTarget = FindObjectOfType<AreaTargetBehaviour>();
         if (areaTarget == null)
         {
@@ -51,7 +50,6 @@ public class ARNav : MonoBehaviour
         }
         else
         {
-            // Subscribe to the OnTargetStatusChanged event
             areaTarget.OnTargetStatusChanged += OnTargetStatusChanged;
         }
 
@@ -60,7 +58,6 @@ public class ARNav : MonoBehaviour
             Debug.LogError("No Destinations Available. Set at least one");
         }
 
-        // Set the destination based on the selected location
         SetDestinationBasedOnLocation();
     }
 
@@ -143,7 +140,6 @@ public class ARNav : MonoBehaviour
             UpdatePath();
         }
 
-        // Check if the distance to the destination is less than or equal to the threshold
         float distanceToDestination = Vector3.Distance(agent.transform.position, destinationObject.transform.position);
         if (distanceToDestination <= distanceThreshold)
         {
@@ -153,7 +149,6 @@ public class ARNav : MonoBehaviour
 
     void UpdateDistanceAndDirection()
     {
-        // Get the direction from the marker to the camera and make it face the camera
         Vector3 directionToCamera = arCamera.transform.position - destinationObject.transform.position;
         directionToCamera.y = 0;  // Prevent rotation on X and Z axes
 
@@ -163,7 +158,6 @@ public class ARNav : MonoBehaviour
             destinationObject.transform.rotation = targetRotation;
         }
 
-        // Calculate and display distance
         float distanceToDestination = Vector3.Distance(agent.transform.position, destinationObject.transform.position);
         distanceText.text = "Distance: " + Mathf.RoundToInt(distanceToDestination) + " meters";
 
@@ -202,17 +196,13 @@ public class ARNav : MonoBehaviour
         }
     }
 
-    // Called when the agent reaches the destination
+    /// Called when the agent reaches the destination
     public void OnDestinationReached()
     {
-        destinationReached = true;  // Stop further updates
-
-        // Display "Destination Reached" message
+        destinationReached = true;
         distanceText.text = "Destination Reached!";
-        distanceText.color = Color.green;
-       
+        distanceText.color = new Color(0.25F,0.76F,0.22F,1F);       
 
-        // Stop the LineRenderer
         if (lineRenderer != null)
         {
             lineRenderer.positionCount = 0;
@@ -222,25 +212,27 @@ public class ARNav : MonoBehaviour
     }
 
     void DisplayETA(float distance, float speed)
-{
-    if (speed > 0)
     {
-        // Calculate ETA in seconds
-        float etaInSeconds = distance / speed;
+        if (speed > 0)
+        {
+            float etaInSeconds = distance / speed;
+            int minutes = Mathf.FloorToInt(etaInSeconds / 60);
+            int seconds = Mathf.FloorToInt(etaInSeconds % 60);
 
-        // Convert ETA to minutes and seconds
-        int minutes = Mathf.FloorToInt(etaInSeconds / 60);
-        int seconds = Mathf.FloorToInt(etaInSeconds % 60);
-
-        // Display the ETA
-        ETAText.text += "\nETA: " + minutes + " min " + seconds + " sec";
+            if (minutes==0)
+            {
+                ETAText.text = "ETA: " + seconds + " sec";
+            } 
+            else 
+            {
+                ETAText.text = "ETA: " + minutes + " min " + seconds + " sec";
+            }
+        } 
+        else 
+        {
+            ETAText.text = "ETA: N/A";
+        }
     }
-    else
-    {
-        // If speed is 0, show no ETA
-        ETAText.text += "\nETA: N/A";
-    }
-}
     void OnDisable()
     {
         if (areaTarget != null)
