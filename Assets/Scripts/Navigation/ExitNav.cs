@@ -5,7 +5,7 @@ public class ExitNav : MonoBehaviour
 {
     public GameObject navigationObject;
 
-    private string uiManagerScene = "UI Manager";
+    private string uiManagerScene = "Main Menu";
 
     /// Event Handler - Triggered when the Menu button is clicked (stop navigation and load UI Manager)
     public void MenuButtonClicked()

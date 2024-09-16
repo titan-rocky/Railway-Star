@@ -46,8 +46,8 @@ MonoBehaviour:
     autoImportArcore: 1
     thirdPartyARCoreClientDetected: 0
   playmode:
-    mRecordingPath: C:/Users/adhit/Desktop/Projects and Tools/SIH/Area Targets/Recording/lift.mp4
-    playModeType: 1
+    mRecordingPath: C:/Users/adhit/Desktop/Projects and Tools/SIH/Area Targets/Recording/SF_MCT.mp4
+    playModeType: 2
   webcam:
     renderTextureLayer: 30
   packageInformation:
