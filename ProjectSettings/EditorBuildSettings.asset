@@ -5,19 +5,19 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/App Designs/Main Menu.unity
     guid: 40c71037409f7b2498332534257cfb94
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/App Designs/College Scene.unity
     guid: 2be22f1fcf7201f4290c41752c1b57ee
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/App Designs/Home Scene.unity
     guid: 5ad12b714e4a9e042aea54bd943d3ef3
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/App Designs/Central Station Scene.unity
     guid: 51a7b489e1487d24e956a1c282a099ab
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ClgScene.unity
     guid: 15c617b40b74a9343a10a043eed76654
   m_configObjects:
