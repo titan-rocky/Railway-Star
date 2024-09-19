@@ -36,6 +36,7 @@ Unity UI is leveraged to build highly interactive and adaptive user interfaces f
 <br />
 <div align="center" >
   <img src="https://github.com/user-attachments/assets/1ebf574b-a6bb-457a-bd37-41f7e16f7d92" width=200 />&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="https://github.com/user-attachments/assets/ab4f98ad-4ff0-45dd-833d-5f976644338f" width=200 />&nbsp;&nbsp;&nbsp;&nbsp;
   <img src="https://github.com/user-attachments/assets/30799114-916d-4045-bbff-2a3c01baf254" width=186.5 /><br />
   <i>Fig: User Interface of the App</i>
 </div>
