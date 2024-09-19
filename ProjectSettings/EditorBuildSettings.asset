@@ -5,18 +5,21 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/UI Manager.unity
-    guid: 188078dc2dd1bda49a072d0bdef06110
-  - enabled: 1
+  - enabled: 0
+    path: Assets/Scenes/App Designs/Main Menu.unity
+    guid: 40c71037409f7b2498332534257cfb94
+  - enabled: 0
+    path: Assets/Scenes/App Designs/College Scene.unity
+    guid: 2be22f1fcf7201f4290c41752c1b57ee
+  - enabled: 0
+    path: Assets/Scenes/App Designs/Home Scene.unity
+    guid: 5ad12b714e4a9e042aea54bd943d3ef3
+  - enabled: 0
+    path: Assets/Scenes/App Designs/Central Station Scene.unity
+    guid: 51a7b489e1487d24e956a1c282a099ab
+  - enabled: 0
     path: Assets/Scenes/ClgScene.unity
     guid: 15c617b40b74a9343a10a043eed76654
-  - enabled: 0
-    path: Assets/Scenes/HomeScene.unity
-    guid: b909d85a1816cd341913a535c5f945ca
-  - enabled: 0
-    path: Assets/Scenes/ILPScene.unity
-    guid: 02fcfc1bc8fd8994c9853ecfad4b370b
   m_configObjects:
     com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000,
       guid: 8bfe154f9d68f13429bf022f6b4f7afc, type: 2}
